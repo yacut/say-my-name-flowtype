@@ -2,7 +2,7 @@
   "name": "say-my-name-flowtype",
   "version": "1.0.0",
   "description": "flowtype sample project",
-  "main": "index.js",
+  "main": "src/index.js",
   "dependencies": {
     "hapi": "^16.1.0"
   },
