@@ -10,10 +10,27 @@ class FullName {
   }
 
   getFullName() {
-    if (this.firstName == null || this.lastName == null) { return ''; }
+    if (this.firstName == null || this.lastName == null) {
+      return '';
+    }
 
-    return `${this.firstName} ${this.lastName}`;
+    return `Your name is ${this.firstName} ${this.lastName}!`;
   }
 }
 
+class Address {
+  country: string;
+  city: string;
+  street: string;
+  zipCode: number;
+
+  constructor(country: string, city: string, street: string, zipCode: number) {
+    this.country = country;
+    this.street = street;
+    this.city = city;
+    this.zipCode = zipCode;
+  }
+}
+
+module.exports.Address = Address;
 module.exports.FullName = FullName;
