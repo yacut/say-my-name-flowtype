@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "dependencies": {
     "hapi": "^16.1.0",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "restify": "^4.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

@@ -36,3 +36,12 @@ server.start((error) => {
   }
   console.log(`Server running at: ${server.info.uri}`);
 });
+
+type Callback = (error?: Error | null, result?: string) => void;
+function start(callback: Callback) {
+  if (process.env.NODE_ENV === 'test') {
+    return callback(new Error('test'));
+  }
+
+  return callback(null, 'bla');
+}
