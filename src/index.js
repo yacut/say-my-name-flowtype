@@ -1,9 +1,9 @@
 /* @flow */
+import _ from 'lodash';
+import Hapi from 'hapi';
 
 const Address = require('./lib/person').Address;
 const FullName = require('./lib/person').FullName;
-
-const Hapi = require('hapi');
 
 const server:Hapi.Server = new Hapi.Server();
 const serverOptions: { port: number, host: string} = { port: 3000, host: 'localhost' };
@@ -14,6 +14,8 @@ server.route({
   path: '/',
   handler(request, reply) {
     const address:Address = new Address('country', 'city', 'street', 123);
+    address.zipCode = _.add('1', address.zipCode);
+
     reply(`Hello, stranger! Your address is ${address.toString()}`);
   },
 });
