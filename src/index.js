@@ -1,9 +1,11 @@
 /* @flow */
 
-const Hapi = require('hapi');
-const Person = require('./lib/person');
+const Address = require('./lib/person').Address;
+const FullName = require('./lib/person').FullName;
 
-const server = new Hapi.Server();
+const Hapi = require('hapi');
+
+const server:Hapi.Server = new Hapi.Server();
 const serverOptions: { port: number, host: string} = { port: 3000, host: 'localhost' };
 server.connection(serverOptions);
 
@@ -11,7 +13,8 @@ server.route({
   method: 'GET',
   path: '/',
   handler(request, reply) {
-    reply('Hello, world!');
+    const address:Address = new Address('country', 'city', 'street', 123);
+    reply(`Hello, stranger! Your address is ${address.toString()}`);
   },
 });
 
@@ -19,7 +22,8 @@ server.route({
   method: 'GET',
   path: '/{firstname}-{lastname}',
   handler(request, reply) {
-    const fullName = new Person.FullName(request.params.firstname, request.params.lastname);
+    const fullName:FullName = new FullName(request.params.firstname, request.params.lastname);
+
     reply(fullName.getFullName());
   },
 });

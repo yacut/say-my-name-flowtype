@@ -30,6 +30,10 @@ class Address {
     this.city = city;
     this.zipCode = zipCode;
   }
+
+  toString(): string {
+    return `${this.country} ${this.city} ${this.street} ${this.zipCode}`;
+  }
 }
 
 module.exports.Address = Address;
