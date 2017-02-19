@@ -1,6 +1,5 @@
 # say-my-name-flowtype
 
-<<<<<<< HEAD
 This is a sandbox project to test [flowtype](https://flowtype.org/) functionality.
 
 ## Setup
