@@ -1,10 +1,10 @@
-/* @flow */
-
+/*@flow */
 class FullName {
-  firstName: string;
-  lastName: string;
-
-  constructor(firstName: string, lastName: string) {
+  /*::
+    firstName:  string;
+    lastName:   string;
+  */
+  constructor(firstName/*: string*/, lastName/*: string*/) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
@@ -19,19 +19,20 @@ class FullName {
 }
 
 class Address {
-  country: string;
-  city: string;
-  street: string;
-  zipCode: number;
-
-  constructor(country: string, city: string, street: string, zipCode: number) {
+  /*::
+    country:  string;
+    city:     string;
+    street:   string;
+    zipCode:  number;
+  */
+  constructor(country/*: string*/, city/*: string*/, street/*: string*/, zipCode/*: number*/) {
     this.country = country;
     this.street = street;
     this.city = city;
     this.zipCode = zipCode;
   }
 
-  toString(): string {
+  toString()/*: string*/ {
     return `${this.country} ${this.city} ${this.street} ${this.zipCode}`;
   }
 }

@@ -16,5 +16,9 @@
         "flowtype",
         "jsx-a11y",
         "import"
-    ]
+    ],
+    "rules":{
+      "max-len": ["error", 120],
+      "spaced-comment": ["error", "never"]
+    }
 }
